@@ -1,0 +1,293 @@
+/* Global Styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: expo-brand-demi,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-weight: bold;
+}
+
+h1{
+    text-align: center;
+    margin-top: 15px;
+}
+
+p{
+    font-weight: 400;
+}
+
+/* Board Container Styles */
+.cointer{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Board Styles */
+.board{
+    width: 295px;
+    height: 600px;
+    border:1px solid #b4b4b46c;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    background-color: rgb(243, 243, 243);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for board deletion */
+}
+
+.heading{
+    border-bottom:1px solid #b4b4b4;
+    padding: 10px 15px;
+    display: flex;
+}
+
+.heading h4{
+    flex: 1;
+}
+
+.boarddelete-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(100%) invert(100%) brightness(0) !important; /* Make the emoji black */
+    opacity: 0.4;
+}
+
+
+.content{
+    flex: 1;
+}
+
+.addbtn{
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+    border: none;
+    height: 50px;
+    border-top:1px solid #b4b4b4;
+    background-color: transparent;
+    cursor: pointer;
+    color: #0000007d;
+    transition: color 0.3s;
+}
+
+.addbtn:hover{
+    color: #000000;
+}
+
+/* Items Styles */
+.items{
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 15px;
+    font-size: 15px;
+    border-radius: 7px;
+    font-weight: 400;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover, deletion and dragging */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.items:hover{
+    background-color: #d7d7d7;
+}
+
+.items.flyingjaat {
+    opacity: 0.5; /* Make the dragged item slightly transparent */
+    transform: scale(1.05); /* Optionally, make the dragged item slightly larger */
+    z-index: 10; /* Ensure the dragged item is on top of others */
+    transition: opacity 0.2s ease, transform 0.2s ease; /* Smooth transition for opacity and scale during drag */
+}
+
+.itembtn{
+    color: black;
+    display: flex;
+    padding-right: 4px;
+    padding-bottom: 2px;
+    gap: 5px;
+    justify-content: space-around;
+}
+
+.itembtn button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    text-shadow: 0 0 0 #000000;
+    opacity: 0.3;
+}
+
+.timestamp {
+    font-size: 10px;
+    color: #888888ee;
+    margin-top: 8px;
+    flex: 1;
+    text-align: left;
+}
+
+/* Plus Button Style */
+.plus-button {
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-bottom: 6px;
+}
+
+.plus-button:hover {
+    background-color: #3f3f3f;
+}
+
+/* Modal Styles */
+.modal, .modalforboard, .modalforedit{
+    position: fixed;
+    background-color: #00000075;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    bottom: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    display: none; /* Hidden by default */
+}
+
+.modalcontent{
+    background-color: rgb(243, 243, 243);
+    width: 300px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 5px;
+}
+
+.modalheadinng{
+    border-bottom:1px solid #b4b4b4;
+    padding: 4px 10px;
+    text-align: right;
+    font-size: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.labelinput{
+    text-align: left;
+    margin: 0px 20px;
+}
+
+#inputtask, .inputboard, .inputedit{
+    margin: 0px 20px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#inputtask:focus, .inputboard:focus, .inputedit:focus{
+    color: #212529;
+    background-color: #fff;
+    border-color: #000000;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.btnparent{
+    align-items: center;
+    justify-content: center;
+    margin-top: 7px;
+}
+
+.addtodobtn {
+    align-items: center;
+    background-color: initial;
+    background-image: linear-gradient(#464d55, #25292e);
+    border-radius: 8px;
+    border-width: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1),0 3px 6px rgba(0, 0, 0, .05);
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    font-family: expo-brand-demi,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 18px;
+    height: 40px;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 0px;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all 150ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.addtodobtn:hover {
+    box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
+    opacity: .85;
+}
+
+.addtodobtn:active {
+    outline: 0;
+}
+
+.addtodobtn:focus {
+    box-shadow: rgba(0, 0, 0, .5) 0 0 0 3px;
+}
+
+@media (max-width: 420px) {
+    .addtodobtn {
+        height: 48px;
+    }
+}
+
+.addtodobtn{
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 0px 0px;
+}

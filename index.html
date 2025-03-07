@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Kanban Board</h1>
+    <div class="cointer">
+        <div class="board" >
+            <div class="heading"><h4>🟢 TODO DO</h4></div>
+            <div class="content">
+            </div>
+            <button class="addbtn">+ Add item</button>
+        </div>
+
+        <div class="board" >
+            <div class="heading"><h4>🟡 IN PROGRESS</h4></div>
+            <div class="content">
+            </div>
+            <button class="addbtn">+ Add item</button>
+        </div>
+
+        <div class="board" >
+            <div class="heading"><h4>🟣 DONE</h4></div>
+            <div class="content">
+            </div>
+            <button class="addbtn">+ Add item</button>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modalcontent">
+            <div class="modalheadinng" id="closemodal">×</div>
+            <label for="addtask" class="labelinput">Add Task</label>
+            <input type="text" name="addtask" id="inputtask">
+            <button class="addtodobtn" id="addtodobtn">Add</button>
+        </div>
+    </div>
+
+    <div class="modalforboard">
+        <div class="modalcontent">
+            <div class="modalheadinng" id="closemodalboard">×</div>
+            <label for="addtask" class="labelinput">Add Board</label>
+            <input type="text" name="addtask" id="inputtask" class="inputboard">
+            <button class="addtodobtn" id="addboardbtn">Add</button>
+        </div>
+    </div>
+
+    <div class="modalforedit">
+        <div class="modalcontent">
+            <div class="modalheadinng" id="closemodaledit">×</div>
+            <label for="addtask" class="labelinput">Edit Task</label>
+            <input type="text" name="addtask" id="inputtask" class="inputedit">
+            <button class="addtodobtn" id="addeditbtn">Edit</button>
+        </div>
+    </div>
+
+    <button class="plus-button">+</button>
+</body>
+<script src="script.js"></script>
+</html>
