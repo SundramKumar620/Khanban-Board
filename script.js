@@ -201,10 +201,11 @@ function createBoard(boardName) {
   let addItemBtn = document.createElement('button');
   addItemBtn.classList.add('addbtn');
   addItemBtn.innerText = '+ Add item';
-  boardDiv.appendChild(addItemBtn);
+ 
 
   boardDiv.appendChild(headingDiv);
   boardDiv.appendChild(contentDiv);
+  boardDiv.appendChild(addItemBtn);
 
   cointer.appendChild(boardDiv);
 }
