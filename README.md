@@ -1,3 +1,5 @@
+<img src="https://github.com/user-attachments/assets/63037fd7-6cda-4b23-a5ed-d4eb251da419" alt="Image Alt Text" width="1000">
+
 # Kanban Board Project Overview
 
 This project implements a basic, interactive Kanban board using HTML, CSS, and JavaScript. It allows users to manage tasks across multiple boards, simulating a simple workflow.
